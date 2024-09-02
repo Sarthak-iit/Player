@@ -1,4 +1,15 @@
-﻿using System;
+﻿/******************************************************************************
+ * Filename    = PausedState.cs
+ *
+ * Author      = Sarthak Garg
+ *
+ * Project     = MediaPlayer
+ *
+ * Description = Represents the paused state of the media player, allowing the user
+ *               to resume or stop playback.
+ *****************************************************************************/
+
+using System;
 
 namespace MediaPlayerSystem
 {

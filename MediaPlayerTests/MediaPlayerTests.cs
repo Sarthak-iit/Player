@@ -1,3 +1,14 @@
+/******************************************************************************
+ * Filename    = MediaPlayerTests.cs
+ *
+ * Author      = Sarthak Garg
+ *
+ * Project     = MediaPlayer
+ *
+ * Description = Contains unit tests for the MediaPlayer class to ensure proper 
+ *               functionality of the state transitions and actions.
+ *****************************************************************************/
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MediaPlayerSystem;
 

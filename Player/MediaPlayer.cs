@@ -1,4 +1,15 @@
-﻿using System;
+﻿/******************************************************************************
+ * Filename    = MediaPlayer.cs
+ *
+ * Author      = Sarthak Garg
+ *
+ * Project     = MediaPlayer
+ *
+ * Description = Defines the MediaPlayer context that manages the current state and
+ *               interactions with the playback states.
+ *****************************************************************************/
+
+using System;
 
 namespace MediaPlayerSystem
 {

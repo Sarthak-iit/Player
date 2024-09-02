@@ -139,5 +139,40 @@ namespace MediaPlayerTests
             Assert.IsInstanceOfType(mediaPlayer.State, typeof(StoppedState)); // State should remain stopped
             Assert.AreEqual(0, mediaPlayer.State.Time); // Time should remain 0
         }
+
+        /// <summary>
+        /// Tests that calling Play when the player is already Playing does not change the state.
+        /// </summary>
+        [TestMethod]
+        public void Play_WhenPlaying_ShouldNotChangeState()
+        {
+            // Arrange
+            mediaPlayer.Play();
+
+            // Act
+            mediaPlayer.Play();
+
+            // Assert
+            Assert.IsInstanceOfType(mediaPlayer.State, typeof(PlayingState)); // State should remain playing
+            Assert.AreEqual(2, mediaPlayer.State.Time); // Time should increment by 1
+        }
+
+        /// <summary>
+        /// Tests that calling Pause when the player is already Paused does not change the state.
+        /// </summary>
+        [TestMethod]
+        public void Pause_WhenPaused_ShouldNotChangeState()
+        {
+            // Arrange
+            mediaPlayer.Play();
+            mediaPlayer.Pause();
+
+            // Act
+            mediaPlayer.Pause();
+
+            // Assert
+            Assert.IsInstanceOfType(mediaPlayer.State, typeof(PausedState)); // State should remain paused
+            Assert.AreEqual(1, mediaPlayer.State.Time); // Time should remain the same
+        }
     }
 }

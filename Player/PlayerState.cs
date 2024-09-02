@@ -16,7 +16,6 @@ public abstract class PlayerState
     public double Time
     {
         get { return time; }
-        set { time = value; }
     }
     public abstract void Play();
     public abstract void Pause();

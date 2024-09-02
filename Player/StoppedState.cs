@@ -25,7 +25,7 @@ namespace MediaPlayerSystem
         {
             // Set the media player context and reset the playback time to 0.
             this.mediaPlayer = mediaPlayer;
-            this.time = 0;
+            time = 0;
         }
 
         /// <summary>

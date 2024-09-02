@@ -21,7 +21,7 @@ namespace MediaPlayerSystem
         /// Initializes a new instance of the <see cref="PausedState"/> class.
         /// </summary>
         /// <param name="mediaPlayer">The media player context that is transitioning to the paused state.</param>
-        public PausedState(MediaPlayer mediaPlayer)
+        public PausedState( MediaPlayer mediaPlayer )
         {
             // Set the media player context and retrieve the current time from the previous state.
             MediaPlayer = mediaPlayer;

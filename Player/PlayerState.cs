@@ -5,18 +5,13 @@ public abstract class PlayerState
 {
 
     protected MediaPlayer mediaPlayer;
+
     protected double time;
 
     public MediaPlayer MediaPlayer
-    {
-        get { return mediaPlayer; }
-        set { mediaPlayer = value; }
-    }
+    { get; set; }
 
-    public double Time
-    {
-        get { return time; }
-    }
+    public double Time => time;
     public abstract void Play();
     public abstract void Pause();
     public abstract void Stop();

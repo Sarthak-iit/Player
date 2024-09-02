@@ -6,7 +6,7 @@ namespace MediaPlayerTests
     [TestClass]
     public class MediaPlayerTests
     {
-        private MediaPlayer mediaPlayer;
+        private MediaPlayer _mediaPlayer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MediaPlayer"/> class before each test.
@@ -15,7 +15,7 @@ namespace MediaPlayerTests
         [TestInitialize]
         public void Setup()
         {
-            mediaPlayer = new MediaPlayer();
+            _mediaPlayer = new MediaPlayer();
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace MediaPlayerTests
         public void InitialState_ShouldBeStopped()
         {
             // Assert
-            Assert.IsInstanceOfType(mediaPlayer.State, typeof(StoppedState));
+            Assert.IsInstanceOfType(_mediaPlayer.State, typeof(StoppedState));
         }
 
         /// <summary>
@@ -35,11 +35,11 @@ namespace MediaPlayerTests
         public void Play_WhenStopped_ShouldTransitionToPlaying()
         {
             // Act
-            mediaPlayer.Play();
+            _mediaPlayer.Play();
 
             // Assert
-            Assert.IsInstanceOfType(mediaPlayer.State, typeof(PlayingState));
-            Assert.AreEqual(1, mediaPlayer.State.Time);
+            Assert.IsInstanceOfType(_mediaPlayer.State, typeof(PlayingState));
+            Assert.AreEqual(1, _mediaPlayer.State.Time);
         }
 
         /// <summary>
@@ -49,14 +49,14 @@ namespace MediaPlayerTests
         public void Pause_WhenPlaying_ShouldTransitionToPaused()
         {
             // Arrange
-            mediaPlayer.Play();
+            _mediaPlayer.Play();
 
             // Act
-            mediaPlayer.Pause();
+            _mediaPlayer.Pause();
 
             // Assert
-            Assert.IsInstanceOfType(mediaPlayer.State, typeof(PausedState));
-            Assert.AreEqual(1, mediaPlayer.State.Time); // The time should remain the same as it was before pausing
+            Assert.IsInstanceOfType(_mediaPlayer.State, typeof(PausedState));
+            Assert.AreEqual(1, _mediaPlayer.State.Time); // The time should remain the same as it was before pausing
         }
 
         /// <summary>
@@ -66,14 +66,14 @@ namespace MediaPlayerTests
         public void Stop_WhenPlaying_ShouldTransitionToStopped()
         {
             // Arrange
-            mediaPlayer.Play();
+            _mediaPlayer.Play();
 
             // Act
-            mediaPlayer.Stop();
+            _mediaPlayer.Stop();
 
             // Assert
-            Assert.IsInstanceOfType(mediaPlayer.State, typeof(StoppedState));
-            Assert.AreEqual(0, mediaPlayer.State.Time); // Time should reset to 0 when stopped
+            Assert.IsInstanceOfType(_mediaPlayer.State, typeof(StoppedState));
+            Assert.AreEqual(0, _mediaPlayer.State.Time); // Time should reset to 0 when stopped
         }
 
         /// <summary>
@@ -83,15 +83,15 @@ namespace MediaPlayerTests
         public void Play_WhenPaused_ShouldTransitionToPlaying()
         {
             // Arrange
-            mediaPlayer.Play();
-            mediaPlayer.Pause();
+            _mediaPlayer.Play();
+            _mediaPlayer.Pause();
 
             // Act
-            mediaPlayer.Play();
+            _mediaPlayer.Play();
 
             // Assert
-            Assert.IsInstanceOfType(mediaPlayer.State, typeof(PlayingState));
-            Assert.AreEqual(2, mediaPlayer.State.Time); // Time should increment
+            Assert.IsInstanceOfType(_mediaPlayer.State, typeof(PlayingState));
+            Assert.AreEqual(2, _mediaPlayer.State.Time); // Time should increment
         }
 
         /// <summary>
@@ -101,15 +101,15 @@ namespace MediaPlayerTests
         public void Stop_WhenPaused_ShouldTransitionToStopped()
         {
             // Arrange
-            mediaPlayer.Play();
-            mediaPlayer.Pause();
+            _mediaPlayer.Play();
+            _mediaPlayer.Pause();
 
             // Act
-            mediaPlayer.Stop();
+            _mediaPlayer.Stop();
 
             // Assert
-            Assert.IsInstanceOfType(mediaPlayer.State, typeof(StoppedState));
-            Assert.AreEqual(0, mediaPlayer.State.Time); // Time should reset to 0 when stopped
+            Assert.IsInstanceOfType(_mediaPlayer.State, typeof(StoppedState));
+            Assert.AreEqual(0, _mediaPlayer.State.Time); // Time should reset to 0 when stopped
         }
 
         /// <summary>
@@ -119,11 +119,11 @@ namespace MediaPlayerTests
         public void Pause_WhenStopped_ShouldNotChangeState()
         {
             // Act
-            mediaPlayer.Pause();
+            _mediaPlayer.Pause();
 
             // Assert
-            Assert.IsInstanceOfType(mediaPlayer.State, typeof(StoppedState)); // State should remain stopped
-            Assert.AreEqual(0, mediaPlayer.State.Time); // Time should remain 0
+            Assert.IsInstanceOfType(_mediaPlayer.State, typeof(StoppedState)); // State should remain stopped
+            Assert.AreEqual(0, _mediaPlayer.State.Time); // Time should remain 0
         }
 
         /// <summary>
@@ -133,11 +133,11 @@ namespace MediaPlayerTests
         public void Stop_WhenAlreadyStopped_ShouldNotChangeState()
         {
             // Act
-            mediaPlayer.Stop();
+            _mediaPlayer.Stop();
 
             // Assert
-            Assert.IsInstanceOfType(mediaPlayer.State, typeof(StoppedState)); // State should remain stopped
-            Assert.AreEqual(0, mediaPlayer.State.Time); // Time should remain 0
+            Assert.IsInstanceOfType(_mediaPlayer.State, typeof(StoppedState)); // State should remain stopped
+            Assert.AreEqual(0, _mediaPlayer.State.Time); // Time should remain 0
         }
 
         /// <summary>
@@ -147,14 +147,14 @@ namespace MediaPlayerTests
         public void Play_WhenPlaying_ShouldNotChangeState()
         {
             // Arrange
-            mediaPlayer.Play();
+            _mediaPlayer.Play();
 
             // Act
-            mediaPlayer.Play();
+            _mediaPlayer.Play();
 
             // Assert
-            Assert.IsInstanceOfType(mediaPlayer.State, typeof(PlayingState)); // State should remain playing
-            Assert.AreEqual(2, mediaPlayer.State.Time); // Time should increment by 1
+            Assert.IsInstanceOfType(_mediaPlayer.State, typeof(PlayingState)); // State should remain playing
+            Assert.AreEqual(2, _mediaPlayer.State.Time); // Time should increment by 1
         }
 
         /// <summary>
@@ -164,15 +164,15 @@ namespace MediaPlayerTests
         public void Pause_WhenPaused_ShouldNotChangeState()
         {
             // Arrange
-            mediaPlayer.Play();
-            mediaPlayer.Pause();
+            _mediaPlayer.Play();
+            _mediaPlayer.Pause();
 
             // Act
-            mediaPlayer.Pause();
+            _mediaPlayer.Pause();
 
             // Assert
-            Assert.IsInstanceOfType(mediaPlayer.State, typeof(PausedState)); // State should remain paused
-            Assert.AreEqual(1, mediaPlayer.State.Time); // Time should remain the same
+            Assert.IsInstanceOfType(_mediaPlayer.State, typeof(PausedState)); // State should remain paused
+            Assert.AreEqual(1, _mediaPlayer.State.Time); // Time should remain the same
         }
     }
 }

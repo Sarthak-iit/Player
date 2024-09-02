@@ -42,7 +42,7 @@ namespace MediaPlayerSystem
         /// This method increments the current playback time.
         /// </summary>
         public override void Play()
-        { this.time += 1; }
+        { time += 1; }
 
         /// <summary>
         /// Handles the Stop action when the media player is in the playing state.

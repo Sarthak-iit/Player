@@ -9,18 +9,12 @@ namespace MediaPlayerSystem
     public class MediaPlayer
     {
         /// <summary>
-        /// The current state of the media player.
-        /// This state controls the behavior of the media player when actions are invoked.
-        /// </summary>
-        private PlayerState playerState;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="MediaPlayer"/> class.
         /// The media player starts in the stopped state.
         /// </summary>
         public MediaPlayer()
         {
-            this.State = new StoppedState(this);
+            State = new StoppedState(this);
         }
 
         /// <summary>
@@ -36,7 +30,7 @@ namespace MediaPlayerSystem
         {
             State.Play();
             Console.WriteLine("Song Played");
-            Console.WriteLine($"Current Time: {this.State.Time}");
+            Console.WriteLine($"Current Time: {State.Time}");
         }
 
         /// <summary>
@@ -47,7 +41,7 @@ namespace MediaPlayerSystem
         {
             State.Stop();
             Console.WriteLine("Song Stopped");
-            Console.WriteLine($"Current Time: {this.State.Time}");
+            Console.WriteLine($"Current Time: {State.Time}");
         }
 
         /// <summary>
@@ -58,7 +52,7 @@ namespace MediaPlayerSystem
         {
             State.Pause();
             Console.WriteLine("Song Paused");
-            Console.WriteLine($"Current Time: {this.State.Time}");
+            Console.WriteLine($"Current Time: {State.Time}");
         }
     }
 }

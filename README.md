@@ -18,17 +18,17 @@ Time Tracking: The media player keeps track of the playback time, updating it co
 
 ### Attributes and Functions
 
-`State` : The current state of the media player, determining its behavior.
-`Time`: The current playback time, managed by the active state.
-`Play()` : Plays the media, transitioning to the Playing state.
-`Pause()` : Pauses the media, transitioning to the Paused state.
-`Stop()` : Stops the media, transitioning to the Stopped state.
+`State` : The current state of the media player, determining its behavior.   
+`Time`: The current playback time, managed by the active state.  
+`Play()` : Plays the media, transitioning to the Playing state.  
+`Pause()` : Pauses the media, transitioning to the Paused state.  
+`Stop()` : Stops the media, transitioning to the Stopped state.  
 
 ### States
 
-`StoppedState` : The media player is stopped. The only transition possible is to `PlayingState`.
-`PlayingState` : The media is actively playing. Users can pause or stop playback.
-`PausedState` : The media is paused. Users can resume playing or stop playback.
+`StoppedState` : The media player is stopped. The only transition possible is to `PlayingState`.  
+`PlayingState` : The media is actively playing. Users can pause or stop playback.  
+`PausedState` : The media is paused. Users can resume playing or stop playback.  
 
 ### Context
 

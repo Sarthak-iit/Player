@@ -20,23 +20,13 @@ namespace MediaPlayerSystem
     public class StoppedState : PlayerState
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StoppedState"/> class by copying the state from another <see cref="PlayerState"/> instance.
-        /// </summary>
-        /// <param name="playerState">The state to copy, typically the previous state of the media player.</param>
-        public StoppedState(PlayerState playerState) :
-            this(playerState.MediaPlayer)
-        {
-        }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="StoppedState"/> class.
         /// </summary>
         /// <param name="mediaPlayer">The media player context that is transitioning to the stopped state.</param>
         public StoppedState(MediaPlayer mediaPlayer)
         {
-            // Set the media player context and reset the playback time to 0.
             this.mediaPlayer = mediaPlayer;
-            time = 0;
+            time = 0; // Reset time to 0
         }
 
         /// <summary>
@@ -54,7 +44,7 @@ namespace MediaPlayerSystem
         /// </summary>
         public override void Play()
         {
-            mediaPlayer.State = new PlayingState(this);
+            mediaPlayer.State = new PlayingState(mediaPlayer);
         }
 
         /// <summary>

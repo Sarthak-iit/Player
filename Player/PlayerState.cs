@@ -33,8 +33,8 @@ namespace MediaPlayerSystem
         /// </summary>
         public MediaPlayer MediaPlayer
         {
-            get;
-            set;
+            get => mediaPlayer;
+            set => mediaPlayer = value;
         }
 
         /// <summary>

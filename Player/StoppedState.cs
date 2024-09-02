@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
  * Filename    = StoppedState.cs
  *
- * Author      = Sarthak Garg
+ * Author      = Sarthak
  *
  * Project     = MediaPlayer
  *
@@ -13,6 +13,7 @@ using System;
 
 namespace MediaPlayerSystem
 {
+
     /// <summary>
     /// Represents the stopped state of the media player.
     /// In this state, the media is stopped, and the user can either start playing or remain stopped.

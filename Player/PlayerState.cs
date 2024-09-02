@@ -1,7 +1,7 @@
 ﻿namespace MediaPlayerSystem;
 
 
-public abstract class IPlayerState
+public abstract class PlayerState
 {
 
     protected MediaPlayer mediaPlayer;
